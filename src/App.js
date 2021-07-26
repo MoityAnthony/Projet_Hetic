@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { ReactComponent as Logo }  from './logo.svg';
+import { ReactComponent as SliderIcon }  from './slider_icon.svg';
+import Visuel from './component/Visuel/index.js';
+import Controleur from './component/controller/index.js';
+import { ReactComponent as ScrollIcon }  from './scroll_icon.svg';
+import Title from './component/Title/index';
+import LightBlock from './component/LightBlock';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Logo className="logo"/>
+      <div className="flex_container">
+        <Visuel/>
+        <Title />
+        <Controleur />
+        <SliderIcon className="slider_icon"/>
+      </div>
+      <ScrollIcon className="scroll_icon"/>
+      <LightBlock />
     </div>
   );
 }

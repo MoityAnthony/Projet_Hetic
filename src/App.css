@@ -1,31 +1,328 @@
 .App {
-  text-align: center;
+  display: block;
+  width: 100%;
+  background: url('./exagone_fond.svg');
+  background-color: #202020;
+  font-family: 'Kumbh Sans', sans-serif;
+  color: #fff;
+}
+.App .logo{
+  width: 65px !important;
+  height: 80px !important;
+  padding-left: 20px;
+  position: relative;
+}
+.App .scroll_icon{
+  position: absolute;
+  top: calc(100vh - 75px);
+  left: calc(50% - 32.5px)
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex_container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.flex_container .slider_icon{
+  margin-top: 22%;
 }
 
-.App-link {
-  color: #61dafb;
+.container_visuel{
+  width: 71vw !important;
+  max-height: 666px;
+}
+.container_visuel .container_room{
+  max-width: 630px !important;
+  height: 100%;
+  position: relative;
+}
+.container_visuel .room{
+  width: 100%;
+}
+.container_visuel .container_room .light_0{
+  position: absolute;
+  top: 38%;
+  left: 19%;
+  z-index: 6;
+}
+.container_visuel .container_room .light_1{
+  position: absolute;
+  top: 31%;
+  left: 34%;
+  z-index: 6;
+}
+.container_visuel .container_room .light_2{
+  position: absolute;
+  top: 23%;
+  left: 49%;
+  z-index: 6;
+}
+.container_visuel .container_room .light_3{
+  position: absolute;
+  top: 44%;
+  left: 34%;
+  z-index: 7;
+}
+.container_visuel .container_room .light_4{
+  position: absolute;
+  top: 38%;
+  left: 49%;
+  z-index: 7;
+}
+.container_visuel .container_room .light_5{
+  position: absolute;
+  top: 31%;
+  left: 64%;
+  z-index: 7;
+}
+.container_visuel .container_room .light_6{
+  position: absolute;
+  top: 53%;
+  left: 49%;
+  z-index: 7;
+}
+.container_visuel .container_room .light_7{
+  position: absolute;
+  top: 44%;
+  left: 64%;
+  z-index: 7;
+}
+.container_visuel .container_room .light_8{
+  position: absolute;
+  top: 38%;
+  left: 79%;
+  z-index: 7;
+}
+
+.container_visuel .container_room .left_side .chair_1{
+  position: absolute;
+  top: 315px;
+  left: 170px;
+  z-index: 6;
+}
+.container_visuel .container_room .left_side .chair_2{
+  position: absolute;
+  top: 335px;
+  left: 210px;
+  z-index: 6;
+}
+.container_visuel .container_room .left_side .chair_3{
+  position: absolute;
+  top: 355px;
+  left: 250px;
+  z-index: 6;
+}
+.container_visuel .container_room .left_side .chair_4{
+  position: absolute;
+  top: 300px;
+  left: 200px;
+  z-index: 5;
+}
+.container_visuel .container_room .left_side .chair_5{
+  position: absolute;
+  top: 320px;
+  left: 240px;
+  z-index: 5;
+}
+.container_visuel .container_room .left_side .chair_6{
+  position: absolute;
+  top: 340px;
+  left: 280px;
+  z-index: 5;
+}
+.container_visuel .container_room .left_side .chair_7{
+  position: absolute;
+  top: 285px;
+  left: 230px;
+  z-index: 4;
+}
+.container_visuel .container_room .left_side .chair_8{
+  position: absolute;
+  top: 305px;
+  left: 270px;
+  z-index: 4;
+}
+.container_visuel .container_room .left_side .chair_9{
+  position: absolute;
+  top: 325px;
+  left: 310px;
+  z-index: 4;
+}
+.container_visuel .container_room .left_side .chair_10{
+  position: absolute;
+  top: 270px;
+  left: 260px;
+  z-index: 3;
+}
+.container_visuel .container_room .left_side .chair_11{
+  position: absolute;
+  top: 290px;
+  left: 300px;
+  z-index: 3;
+}
+.container_visuel .container_room .left_side .chair_12{
+  position: absolute;
+  top: 310px;
+  left: 340px;
+  z-index: 3;
+}
+.container_visuel .container_room .left_side .chair_13{
+  position: absolute;
+  top: 255px;
+  left: 290px;
+  z-index: 2;
+}
+.container_visuel .container_room .left_side .chair_14{
+  position: absolute;
+  top: 275px;
+  left: 330px;
+  z-index: 2;
+}
+.container_visuel .container_room .left_side .chair_15{
+  position: absolute;
+  top: 295px;
+  left: 370px;
+  z-index: 2;
+}
+.container_visuel .container_room .left_side .chair_16{
+  position: absolute;
+  z-index: 2;
+}
+
+.container_visuel .container_room .right_side .chair_1{
+  position: absolute;
+  top: 405px;
+  left: 330px;
+  z-index: 6;
+}
+.container_visuel .container_room .right_side .chair_2{
+  position: absolute;
+  top: 425px;
+  left: 370px;
+  z-index: 6;
+}
+.container_visuel .container_room .right_side .chair_3{
+  position: absolute;
+  top: 445px;
+  left: 410px;
+  z-index: 6;
+}
+.container_visuel .container_room .right_side .chair_4{
+  position: absolute;
+  top: 390px;
+  left: 360px;
+  z-index: 5;
+}
+.container_visuel .container_room .right_side .chair_5{
+  position: absolute;
+  top: 410px;
+  left: 400px;
+  z-index: 5;
+}
+.container_visuel .container_room .right_side .chair_6{
+  position: absolute;
+  top: 430px;
+  left: 440px;
+  z-index: 5;
+}
+.container_visuel .container_room .right_side .chair_7{
+  position: absolute;
+  top: 375px;
+  left: 390px;
+  z-index: 4;
+}
+.container_visuel .container_room .right_side .chair_8{
+  position: absolute;
+  top: 395px;
+  left: 430px;
+  z-index: 4;
+}
+.container_visuel .container_room .right_side .chair_9{
+  position: absolute;
+  top: 415px;
+  left: 470px;
+  z-index: 4;
+}
+.container_visuel .container_room .right_side .chair_10{
+  position: absolute;
+  top: 360px;
+  left: 420px;
+  z-index: 3;
+}
+.container_visuel .container_room .right_side .chair_11{
+  position: absolute;
+  top: 380px;
+  left: 460px;
+  z-index: 3;
+}
+.container_visuel .container_room .right_side .chair_12{
+  position: absolute;
+  top: 400px;
+  left: 500px;
+  z-index: 3;
+}
+.container_visuel .container_room .right_side .chair_13{
+  position: absolute;
+  top: 345px;
+  left: 450px;
+  z-index: 2;
+}
+.container_visuel .container_room .right_side .chair_14{
+  position: absolute;
+  top: 365px;
+  left: 490px;
+  z-index: 2;
+}
+.container_visuel .container_room .right_side .chair_15{
+  position: absolute;
+  top: 385px;
+  left: 530px;
+  z-index: 2;
+}
+
+.controller{
+  position: relative;
+  max-height: 666px;
+  margin-top: 220px;
+}
+.controller .ReactNipple{
+  margin: auto;
+  margin-top: calc(50% - 150px);
+}
+.controller .nipple .back, .controller .nipple .front{
+  background: #63c96b !important;
+}
+.controller .debug{
+  width: 360px;
+}
+.controller .debug .light_position{
+  display: none !important;
+}
+.title h1{
+  font-size: 35px;
+  margin: 0;
+  margin-top: 170px;
+}
+.title .rectangle{
+  width: 185px;
+  height: 2px;
+  background-color: #63A171;
+  margin-left: 35px;
+  margin-top: 16px;
+}
+.lightblock{
+  display: flex;
+  background: url('./background_linear.svg') no-repeat center 100%;
+  height: 100vh;
+}
+.lightblock .title_lightblock h2{
+  color: #000;
+  background: url('./Group_rectangle.svg') no-repeat bottom;
+  font-size: 35px;
+  width: 500px;
+  text-align: end;
+  margin-top: 200px;
+}
+.lightblock .lightdesign{
+  margin-left: auto;
 }
 
 @keyframes App-logo-spin {
