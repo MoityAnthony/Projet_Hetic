@@ -1,9 +1,9 @@
 
 
-const Title = () => {
+const Title = (props) => {
   return(
     <div className="title">
-      <h1>L'éclairage</h1>
+      <h1>{props.text}</h1>
       <div className="rectangle"></div>
     </div>
   )

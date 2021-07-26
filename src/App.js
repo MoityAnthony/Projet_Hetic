@@ -6,19 +6,16 @@ import Controleur from './component/controller/index.js';
 import { ReactComponent as ScrollIcon }  from './scroll_icon.svg';
 import Title from './component/Title/index';
 import LightBlock from './component/LightBlock';
+import EnergyBlock from './component/EnergyBlock';
+import Slider from './component/Slider';
+import {ReactComponent as Room} from './room.svg';
 
 function App() {
   return (
     <div className="App">
-      <Logo className="logo"/>
-      <div className="flex_container">
-        <Visuel/>
-        <Title />
-        <Controleur />
-        <SliderIcon className="slider_icon"/>
-      </div>
-      <ScrollIcon className="scroll_icon"/>
+      <Slider />
       <LightBlock />
+      <EnergyBlock />
     </div>
   );
 }

@@ -61,7 +61,6 @@ export default class PositionJoystick extends Component {
         return (
           <ul className="light_position">
             <li>
-              New light position :
               <ul>
                 {new_light_position.map((new_light_position, i) => (
                   <li key={i}>{new_light_position + ""}</li>
@@ -92,7 +91,6 @@ export default class PositionJoystick extends Component {
         return (
           <ul className="light_position">
             <li>
-              New light position :
               <ul>
                 {new_light_position.map((new_light_position, i) => (
                   <li key={i}>{new_light_position + ""}</li>
@@ -105,7 +103,6 @@ export default class PositionJoystick extends Component {
         return (
           <ul className="light_position">
             <li>
-              Light position :
               <ul>
                 {light_position.map((light_position, i) => (
                   <li key={i}>{light_position + ""}</li>
@@ -119,26 +116,24 @@ export default class PositionJoystick extends Component {
 
     return (
       <div className="debug">
+        <h4 className="direction">
+          Direction :
+        </h4>
         <ul>
-          <li className="direction">
-            direction :
-            <ul>
-              <li className="x">
-                x :
-                <span className="data" children={direction.x} />
-              </li>
-              <li className="y">
-                y :
-                <span className="data" children={direction.y} />
-              </li>
-              <li className="angle">
-                angle :
-                <span className="data" children={direction.angle} />
-              </li>
-            </ul>
+          <li className="x">
+            x :
+            <span className="data" children={direction.x} />
+          </li>
+          <li className="y">
+            y :
+            <span className="data" children={direction.y} />
+          </li>
+          <li className="angle">
+            angle :
+            <span className="data" children={direction.angle} />
           </li>
         </ul>
-        Light position : <br /><br />
+        <h4>Light position : </h4>
         <div id="log"></div>
         <LightPosition/>
       </div>

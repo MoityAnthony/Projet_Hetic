@@ -59,7 +59,8 @@ export default class Controller extends React.Component {
 
     render() {
         return (
-            <div className="controller">
+            <div className={(this.props.status) + " controller"}>
+                <h3>Controler l'éclairage avec ce joystick :</h3>
                 <ReactNipple
                     options={{ mode: 'static', position: { top: '50%', left: '50%' } }}
                     style={{

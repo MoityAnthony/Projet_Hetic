@@ -9,7 +9,6 @@
 .App .logo{
   width: 65px !important;
   height: 80px !important;
-  padding-left: 20px;
   position: relative;
 }
 .App .scroll_icon{
@@ -20,13 +19,16 @@
 
 .flex_container{
   display: flex;
+  height: calc(100vh - 40px);
+  padding: 20px;
 }
-.flex_container .slider_icon{
-  margin-top: 22%;
+
+.block_container{
+  display: block;
 }
 
 .container_visuel{
-  width: 71vw !important;
+  width: 55vw !important;
   max-height: 666px;
 }
 .container_visuel .container_room{
@@ -281,11 +283,15 @@
 .controller{
   position: relative;
   max-height: 666px;
-  margin-top: 220px;
+  margin-top: 135px;
 }
 .controller .ReactNipple{
   margin: auto;
-  margin-top: calc(50% - 150px);
+  width: 120px !important;
+  height: 120px !important;
+}
+.controller h3{
+  margin-bottom: 20px;
 }
 .controller .nipple .back, .controller .nipple .front{
   background: #63c96b !important;
@@ -296,10 +302,12 @@
 .controller .debug .light_position{
   display: none !important;
 }
+.title{
+  margin-top: 90px;
+}
 .title h1{
   font-size: 35px;
   margin: 0;
-  margin-top: 170px;
 }
 .title .rectangle{
   width: 185px;
@@ -308,21 +316,189 @@
   margin-left: 35px;
   margin-top: 16px;
 }
-.lightblock{
+.light_block{
   display: flex;
   background: url('./background_linear.svg') no-repeat center 100%;
   height: 100vh;
 }
-.lightblock .title_lightblock h2{
+.light_block .title_light_block h2{
   color: #000;
   background: url('./Group_rectangle.svg') no-repeat bottom;
   font-size: 35px;
   width: 500px;
   text-align: end;
   margin-top: 200px;
+  margin-left: calc(100% - 300px);
 }
-.lightblock .lightdesign{
-  margin-left: auto;
+.energy_block{
+  display: flex;
+  height: 100vh;
+}
+.energy_block h2{
+  width: 360px;
+  font-size: 35px;
+  margin-top: 210px;
+  margin-left: 100px;
+}
+.energy_block .energy_image{
+  margin-left: 176px;
+  margin-top: 182px;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider_carousel{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  box-shadow: -1px 2px 10px 2px rgba(0, 0, 0, 0.5);
+}
+.carousel_slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+}
+.carousel_slide img, .carousel svg {
+  max-width: 100%;
+}
+.carousel_history {
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  width: 25px;
+  height: 130px;
+  right: 5%;
+  top: calc( 50% - 65px);
+  left: auto;
+}
+.carousel_history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.carousel_history ul li {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  height: inherit;
+  position: relative;
+}
+.carousel_history ul li:not(:last-of-type) {
+  margin-right: 5%;
+}
+.carousel_history ul li button {
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('./Polygon_grey.svg') no-repeat center 100%;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: background-color 300ms ease;
+}
+.carousel_history ul li button.active {
+  background: url('./Polygon_green.svg') no-repeat center 100%;
+}
+.carousel_control {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  height: 100%;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 0;
+  padding: 0 5px;
+  width: 10%;
+  overflow: hidden;
+  transition: background-color 300ms ease;
+  cursor: pointer;
+}
+.carousel_control span {
+  display: inline-block;
+  width: 2vw;
+  height: 2vw;
+  position: relative;
+  box-sizing: border-box;
+  opacity: 0.65;
+  border-bottom: 3px solid white;
+  border-left: 3px solid white;
+  transition: opacity 300ms ease;
+}
+.carousel_control:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.carousel_control:hover span {
+  opacity: 0.95;
+}
+.carousel_control__prev {
+  left: 0;
+  padding-left: 12px;
+}
+.carousel_control__prev span {
+  transform: rotate(45deg);
+}
+.carousel_control__next {
+  right: 0;
+  padding-right: 12px;
+}
+.carousel_control__next span {
+  transform: rotate(-135deg);
+}
+
+.leave {
+  transform: translateX(0);
+}
+
+.enter-active.enter-next,
+.enter-active.enter-prev {
+  transform: translateX(0);
+  transition: transform 500ms linear;
+}
+
+.enter-next {
+  transform: translateY(100vh);
+}
+
+.enter-prev {
+  transform: translateY(-100vh);
+  transition: transform 500ms linear;
+}
+
+.leave-active-next {
+  transform: translateY(-100vh);
+  transition: transform 500ms linear;
+}
+
+.leave.leave-active-prev {
+  transform: translateY(100vh);
+  transition: transform 500ms linear;
+}
+.visible{
+  display: block !important;
+}
+.hidden{
+  display: none !important;
 }
 
 @keyframes App-logo-spin {

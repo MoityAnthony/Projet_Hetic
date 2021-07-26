@@ -4,6 +4,7 @@ import { ReactComponent as Light_Image_Off } from "../../light_off.svg";
 const Light = (props) => {
 
   const status = props.status;
+  const status_light_block = props.status_light_block;
   
   const light = [];
   
@@ -17,7 +18,7 @@ const Light = (props) => {
   }
     
   return (
-    <div>
+    <div className={status_light_block}>
       {light}
     </div>
   )
