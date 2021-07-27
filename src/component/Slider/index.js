@@ -11,6 +11,7 @@ import Controleur from "../controller/index.js";
 import { ReactComponent as ScrollIcon } from "../../scroll_icon.svg";
 var CSSTransitionGroup = require("react-transition-group/CSSTransitionGroup");
 
+
 export default class Slider extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +25,8 @@ export default class Slider extends Component {
               status: "visible",
               status_light_block: "visible",
               status_infra_rouge: "hidden",
-              status_clim: '',
+              status_clim_block: '',
+              intensity: props.intensity,
             },
           ],
         },
@@ -36,7 +38,8 @@ export default class Slider extends Component {
               status: "hidden",
               status_light_block: "hidden",
               status_infra_rouge: "hidden",
-              status_clim: 'cool',
+              status_clim_block: props.clim,
+              intensity: '',
             },
           ],
         },
@@ -48,7 +51,8 @@ export default class Slider extends Component {
               status: "hidden",
               status_light_block: "hidden",
               status_infra_rouge: "visible",
-              status_clim: '',
+              status_clim_block: '',
+              intensity: '',
             },
           ],
         },
@@ -75,8 +79,9 @@ export default class Slider extends Component {
       text = this.state.section[index].item[0].text,
       status = this.state.section[index].item[0].status,
       status_light_block = this.state.section[index].item[0].status_light_block,
-      status_clim = this.state.section[index].item[0].status_clim,
-      status_infra_rouge = this.state.section[index].item[0].status_infra_rouge;
+      status_clim_block = this.state.section[index].item[0].status_clim_block,
+      status_infra_rouge = this.state.section[index].item[0].status_infra_rouge,
+      intensity = this.state.section[index].item[0].intensity;
 
     return (
       <div className="slider_carousel">
@@ -92,10 +97,10 @@ export default class Slider extends Component {
             <div className="carousel_slide" key={index}>
               <div className="flex_container">
                 <Logo className="logo" />
-                <Visuel image={src} status_light_block={status_light_block} status_infra_rouge={status_infra_rouge} status_clim={status_clim} />
+                <Visuel image={src} status_light_block={status_light_block} status_infra_rouge={status_infra_rouge} status_clim_block={status_clim_block} intensity={intensity} />
                 <div className="block_container">
                   <Title text={text} />
-                  <Controleur status={status} />
+                  {/* <Controleur status={status} /> */}
                 </div>
               </div>
               <a href="#light_block">

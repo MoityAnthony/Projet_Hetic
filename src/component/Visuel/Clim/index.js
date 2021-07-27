@@ -2,7 +2,7 @@ import {ReactComponent as ClimCool} from '../../../waves_cool.svg';
 import {ReactComponent as ClimHot} from '../../../waves_hot.svg';
 const Clim = (props) => {
 
-  const status = props.status_clim;
+  const status = props.status_clim_block;
 
   return(
     <div className="clim_container">

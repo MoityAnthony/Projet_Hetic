@@ -30,7 +30,8 @@ export default class PositionJoystick extends Component {
         if (typeof message == "object") {
           last_light_position =
             JSON && JSON.stringify ? JSON.stringify(message) : Array(message);
-          logger.innerHTML = last_light_position;
+          position_joystick.push(last_light_position);
+          logger.innerHTML = position_joystick;
         } else {
           last_light_position = message;
           logger.innerHTML = last_light_position;

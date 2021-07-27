@@ -22,9 +22,9 @@ const Visuel = (props) => {
       <div className="container_room">
         {props.image}
         <Chair />
-        <Light status={status_light} status_light_block={props.status_light_block}/>
+        <Light status={status_light} status_light_block={props.status_light_block} intensity={props.intensity}/>
         <InfraRouge status_infra_rouge={props.status_infra_rouge} />
-        <Clim status_clim={props.status_clim}></Clim>
+        <Clim status_clim_block={props.status_clim_block}></Clim>
       </div>
     </div>
   )

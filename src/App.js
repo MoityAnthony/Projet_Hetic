@@ -16,28 +16,85 @@ import ThermBlock from './component/ThermBlock';
 function App() {
 
   const [humidity, setHumidity] = useState([]);
+  const [temperature, setTemperature] = useState([]);
+  const [luminosity, setLuminosity] = useState([]);
+  const [intensity, setIntensity] = useState('');
+  const [clim, setClim] = useState('');
+
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://influxdb-web3-groupe2.herokuapp.com/humidity")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setHumidity(result.records);
-          console.log('test');
-        },
-        // Remarque : il faut gérer les erreurs ici plutôt que dans
-        // un bloc catch() afin que nous n’avalions pas les exceptions
-        // dues à de véritables bugs dans les composants.
-        (error) => {
-          setError(error);
+    fetch('http://localhost:8010/proxy/temperature', { 
+        method: "GET", 
+        mode: 'cors', 
+        headers: { "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
+        "Access-Control-Allow-Headers": "X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method",
+        "Access-Control-Allow-Credentials": true,}})
+    .then(response => response.json())
+    .then(
+      (result) => {
+        let datasets = result;
+      let dataset = datasets[0];
+      let data = dataset.records[0];
+        setTemperature(data.values._value);
+        if(temperature < 20){
+          setClim('hot');
         }
-      )
+        else if(temperature > 20){
+          setClim('cool');
+        }
+        else if(temperature === 20){
+          setClim('');
+        }
+      }
+    )
+    fetch('http://localhost:8010/proxy/humidity', { 
+        method: "GET", 
+        mode: 'cors', 
+        headers: { "Access-Control-Allow-Origin": "",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
+        "Access-Control-Allow-Headers": "X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method",
+        "Access-Control-Allow-Credentials": true,}})
+    .then(response => response.json())
+    .then(
+      (result) => {
+        let datasets = result;
+      let dataset = datasets[0];
+      let data = dataset.records[0];
+        setHumidity(data.values._value);
+        // else if(temperature === 20.81 ){
+        //   setClim('cool');
+        // }
+        // else if(temperature === 20 && humidity === 50){
+        //   setClim('cool');
+        // }
+      }
+    )
+    fetch('http://localhost:8010/proxy/brightness', { 
+        method: "GET", 
+        mode: 'cors', 
+        headers: { "Access-Control-Allow-Origin": "",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
+        "Access-Control-Allow-Headers": "X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method",
+        "Access-Control-Allow-Credentials": true,}})
+    .then(response => response.json())
+    .then(
+      (result) => {
+        let datasets = result;
+        let dataset = datasets[0];
+        let data = dataset.records[0];
+        setLuminosity(data.values._value);
+        setIntensity(100 - luminosity / 100);
+      }
+    )
   }, [])
+
 
   return (
     <div className="App">
-      <Slider />
+      {clim}
+      <Slider intensity={intensity} clim={clim}/>
       <div className="container_bg">
         <LightBlock />
         <EnergyBlock />
