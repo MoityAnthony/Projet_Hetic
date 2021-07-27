@@ -20,7 +20,7 @@
 .flex_container{
   display: flex;
   height: calc(100vh - 40px);
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .block_container{
@@ -320,6 +320,7 @@
   display: flex;
   background: url('./background_linear.svg') no-repeat center 100%;
   height: 100vh;
+  padding: 0px 20px;
 }
 .light_block .title_light_block h2{
   color: #000;
@@ -328,23 +329,50 @@
   width: 500px;
   text-align: end;
   margin-top: 200px;
-  margin-left: calc(100% - 300px);
+}
+.light_block p{
+  width: 500px;
+  margin-left: 145px;
+  font-size: 20px;
+  color: #000;
+  line-height: 30px;
 }
 .energy_block{
   display: flex;
   height: 100vh;
+  padding: 0 20px;
+  margin-left: 75px;
 }
 .energy_block h2{
-  width: 360px;
+  width: 520px;
   font-size: 35px;
   margin-top: 210px;
+  margin-bottom: 0px;
   margin-left: 100px;
 }
+.energy_block p{
+  width: 540px;
+  font-size: 20px;
+  margin-top: 65px;
+  margin-left: 100px;
+  line-height: 30px;
+}
 .energy_block .energy_image{
-  margin-left: 176px;
   margin-top: 182px;
 }
-
+.infra_block {
+  display: flex;
+  height: 100vh;
+  padding: 0 20px;
+  margin-left: 95px;
+}
+.infra_block h2{
+  width: 630px;
+}
+.infra_block .infra_image{
+  margin-left: auto;
+  margin-right: 182px;
+}
 .slider {
   display: flex;
   flex-direction: column;

@@ -9,6 +9,7 @@ import LightBlock from './component/LightBlock';
 import EnergyBlock from './component/EnergyBlock';
 import Slider from './component/Slider';
 import {ReactComponent as Room} from './room.svg';
+import InfraBlock from './component/InfraBlock';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Slider />
       <LightBlock />
       <EnergyBlock />
+      <InfraBlock />
     </div>
   );
 }
