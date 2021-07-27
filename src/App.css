@@ -362,9 +362,10 @@
 }
 .infra_block {
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 150px);
   padding: 0 20px;
   margin-left: 95px;
+  padding-top: 150px;
 }
 .infra_block h2{
   width: 630px;
