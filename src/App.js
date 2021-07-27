@@ -11,17 +11,19 @@ import Slider from './component/Slider';
 import {ReactComponent as Room} from './room.svg';
 import InfraBlock from './component/InfraBlock';
 import {useEffect, useState} from 'react';
+import Mail from './component/Mail';
+import ThermBlock from './component/ThermBlock';
 function App() {
 
   const [humidity, setHumidity] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://influxdb-web3-groupe2.herokuapp.com/humidity", {mode: 'no-cors'})
+    fetch("https://influxdb-web3-groupe2.herokuapp.com/humidity")
       .then(res => res.json())
       .then(
         (result) => {
-          setHumidity(result._value);
+          setHumidity(result.records);
           console.log('test');
         },
         // Remarque : il faut gérer les erreurs ici plutôt que dans
@@ -36,9 +38,13 @@ function App() {
   return (
     <div className="App">
       <Slider />
-      <LightBlock />
-      <EnergyBlock />
-      <InfraBlock />
+      <div className="container_bg">
+        <LightBlock />
+        <EnergyBlock />
+        <InfraBlock />
+        <ThermBlock />
+      </div>
+      <Mail />
     </div>
   );
 }

@@ -4,7 +4,7 @@
   background: url('./exagone_fond.svg');
   background-color: #202020;
   font-family: 'Kumbh Sans', sans-serif;
-  color: #fff;
+  color: #0F3A50;
 }
 .App .logo{
   width: 65px !important;
@@ -17,6 +17,9 @@
   left: calc(50% - 32.5px)
 }
 
+.container_bg{
+  background: url('./background_linear.svg') no-repeat center 100%;
+}
 .flex_container{
   display: flex;
   height: calc(100vh - 40px);
@@ -41,59 +44,64 @@
 }
 .container_visuel .container_room .light_0{
   position: absolute;
-  top: 38%;
+  top: 33%;
   left: 19%;
   z-index: 6;
 }
 .container_visuel .container_room .light_1{
   position: absolute;
-  top: 31%;
+  top: 26%;
   left: 34%;
   z-index: 6;
 }
 .container_visuel .container_room .light_2{
   position: absolute;
-  top: 23%;
+  top: 18%;
   left: 49%;
   z-index: 6;
 }
 .container_visuel .container_room .light_3{
   position: absolute;
-  top: 44%;
+  top: 39%;
   left: 34%;
   z-index: 7;
 }
 .container_visuel .container_room .light_4{
   position: absolute;
-  top: 38%;
+  top: 33%;
   left: 49%;
   z-index: 7;
 }
 .container_visuel .container_room .light_5{
   position: absolute;
-  top: 31%;
+  top: 26%;
   left: 64%;
   z-index: 7;
 }
 .container_visuel .container_room .light_6{
   position: absolute;
-  top: 53%;
+  top: 48%;
   left: 49%;
   z-index: 7;
 }
 .container_visuel .container_room .light_7{
   position: absolute;
-  top: 44%;
+  top: 39%;
   left: 64%;
   z-index: 7;
 }
 .container_visuel .container_room .light_8{
   position: absolute;
-  top: 38%;
+  top: 33%;
   left: 79%;
   z-index: 7;
 }
-
+/* .chair_1 path:nth-child(8), .chair_2 path:nth-child(8), .chair_3 path:nth-child(8), .chair_4 path:nth-child(8), .chair_5 path:nth-child(8), .chair_6 path:nth-child(8), .chair_7 path:nth-child(8), .chair_8 path:nth-child(8), .chair_9 path:nth-child(8), .chair_10 path:nth-child(8), .chair_11 path:nth-child(8), .chair_12 path:nth-child(8), .chair_13 path:nth-child(8), .chair_14 path:nth-child(8), .chair_15 path:nth-child(8), .chair_16 path:nth-child(8)  {
+  fill:#c96363 !important;
+}
+.right_side .chair_1 path:nth-child(8),.right_side .chair_2 path:nth-child(8),.right_side .chair_3 path:nth-child(8),.right_side .chair_4 path:nth-child(8),.right_side .chair_5 path:nth-child(8),.right_side .chair_6 path:nth-child(8),.right_side .chair_7 path:nth-child(8),.right_side .chair_8 path:nth-child(8),.left_side .chair_9 path:nth-child(8),.left_side .chair_10 path:nth-child(8),.left_side .chair_11 path:nth-child(8),.left_side .chair_12 path:nth-child(8),.left_side .chair_13 path:nth-child(8),.left_side .chair_14 path:nth-child(8),.left_side .chair_15 path:nth-child(8),.left_side .chair_16 path:nth-child(8){
+  fill:#63c96b !important;
+} */
 .container_visuel .container_room .left_side .chair_1{
   position: absolute;
   top: 315px;
@@ -279,11 +287,22 @@
   left: 530px;
   z-index: 2;
 }
+.container_visuel .container_room .visible .infra_rouge_image {
+  position: absolute;
+  top: 28px;
+  left: 206.5px;
+}
+.container_visuel .container_room .clim_container .clim{
+  position: absolute;
+  top: 28%;
+  left: 42%;
+}
 
 .controller{
   position: relative;
   max-height: 666px;
   margin-top: 135px;
+  color: #fff;
 }
 .controller .ReactNipple{
   margin: auto;
@@ -292,6 +311,7 @@
 }
 .controller h3{
   margin-bottom: 20px;
+  color: #fff;
 }
 .controller .nipple .back, .controller .nipple .front{
   background: #63c96b !important;
@@ -302,12 +322,14 @@
 .controller .debug .light_position{
   display: none !important;
 }
+
 .title{
   margin-top: 90px;
 }
 .title h1{
   font-size: 35px;
   margin: 0;
+  color: #fff;
 }
 .title .rectangle{
   width: 185px;
@@ -316,64 +338,113 @@
   margin-left: 35px;
   margin-top: 16px;
 }
+
 .light_block{
   display: flex;
-  background: url('./background_linear.svg') no-repeat center 100%;
   height: 100vh;
   padding: 0px 20px;
+  position: relative;
+}
+.light_block .title_light_block{
+  padding-left: 180px;
 }
 .light_block .title_light_block h2{
-  color: #000;
   background: url('./Group_rectangle.svg') no-repeat bottom;
   font-size: 35px;
   width: 500px;
   text-align: end;
-  margin-top: 200px;
+  padding-top: 200px;
 }
 .light_block p{
   width: 500px;
-  margin-left: 145px;
+  padding-left: 145px;
   font-size: 20px;
-  color: #000;
   line-height: 30px;
 }
+.light_block svg{
+  position: absolute;
+  right: 107px;
+  top: 140px;
+}
+
 .energy_block{
   display: flex;
   height: 100vh;
   padding: 0 20px;
-  margin-left: 75px;
+  padding-left: 75px;
 }
 .energy_block h2{
   width: 555px;
   font-size: 35px;
-  margin-top: 210px;
-  margin-bottom: 0px;
-  margin-left: 100px;
+  padding-top: 185px;
+  padding-bottom: 0px;
+  padding-left: 100px;
 }
 .energy_block p{
   width: 540px;
   font-size: 20px;
-  margin-top: 65px;
-  margin-left: 100px;
+  padding-top: 50px;
+  padding-left: 100px;
   line-height: 30px;
 }
 .energy_block .energy_image{
-  margin-top: 182px;
+  padding-top: 182px;
 }
+
 .infra_block {
   display: flex;
-  height: calc(100vh - 150px);
+  height: 100vh;
   padding: 0 20px;
-  margin-left: 95px;
-  padding-top: 150px;
+  padding-left: 95px;
+  margin-top: 150px;
 }
 .infra_block h2{
-  width: 630px;
+  width: 673px;
+  font-size: 35px;
+  padding: 0px;
+  margin: 0px;
+}
+.infra_block p{
+  width: 538px;
+  font-size: 20px;
+  padding-top: 65px;
+  line-height: 30px;
 }
 .infra_block .infra_image{
-  margin-left: auto;
-  margin-right: 182px;
+  padding-left: auto;
+  padding-left: 100px;
 }
+
+.therm_block{
+  display: flex;
+  height: 100vh;
+  padding: 0 20px;
+  margin-top: 150px;
+}
+.therm_block h2{
+  width: 671px;
+  font-size: 35px;
+  padding-bottom: 0px;
+  padding-left: 100px;
+}
+.therm_block p{
+  width: 538px;
+  font-size: 20px;
+  padding-left: 100px;
+  line-height: 30px;
+}
+
+.mail{
+  padding: 120px 0px;
+  text-align: center;
+}
+.mail h2{
+  font-size: 35px;
+  color: #fff;
+  font-weight: bold;
+}
+
+
 .slider {
   display: flex;
   flex-direction: column;

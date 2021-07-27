@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import History from "../History";
-import { ReactComponent as Room } from "../../room.svg";
+import { ReactComponent as RoomClim } from "../../room_clim.svg";
 import { ReactComponent as RoomLight } from "../../room_light.svg";
 import { ReactComponent as RoomInfra } from "../../room_infra.svg";
 import Title from "../Title";
@@ -23,6 +23,20 @@ export default class Slider extends Component {
               text: "L'éclairage",
               status: "visible",
               status_light_block: "visible",
+              status_infra_rouge: "hidden",
+              status_clim: '',
+            },
+          ],
+        },
+        {
+          item: [
+            {
+              image: <RoomClim />,
+              text: "La ventilation",
+              status: "hidden",
+              status_light_block: "hidden",
+              status_infra_rouge: "hidden",
+              status_clim: 'cool',
             },
           ],
         },
@@ -33,16 +47,8 @@ export default class Slider extends Component {
               text: "L'infrarouge",
               status: "hidden",
               status_light_block: "hidden",
-            },
-          ],
-        },
-        {
-          item: [
-            {
-              image: <Room />,
-              text: "La ventilation",
-              status: "hidden",
-              status_light_block: "hidden",
+              status_infra_rouge: "visible",
+              status_clim: '',
             },
           ],
         },
@@ -68,7 +74,9 @@ export default class Slider extends Component {
       src = this.state.section[index].item[0].image,
       text = this.state.section[index].item[0].text,
       status = this.state.section[index].item[0].status,
-      status_light_block = this.state.section[index].item[0].status_light_block;
+      status_light_block = this.state.section[index].item[0].status_light_block,
+      status_clim = this.state.section[index].item[0].status_clim,
+      status_infra_rouge = this.state.section[index].item[0].status_infra_rouge;
 
     return (
       <div className="slider_carousel">
@@ -84,7 +92,7 @@ export default class Slider extends Component {
             <div className="carousel_slide" key={index}>
               <div className="flex_container">
                 <Logo className="logo" />
-                <Visuel image={src} status_light_block={status_light_block} />
+                <Visuel image={src} status_light_block={status_light_block} status_infra_rouge={status_infra_rouge} status_clim={status_clim} />
                 <div className="block_container">
                   <Title text={text} />
                   <Controleur status={status} />

@@ -5,10 +5,9 @@ const EnergyBlock = () => {
     <div className="energy_block">
       <EnergyImage className="energy_image" />
       <div className="container_block">
-        <h2>Faites des économies d’energie grace au controle d’intensité</h2>
+        <h2>Faites des économies d’energie</h2>
         <p>
-          Les changemements apportés par le contrôle de la luminosité réduit
-          fortement vos coûts énergetiques
+          Nos dispositifs vous permettent à coup sur de gagner en économie d’energie sur vos factures
         </p>
       </div>
     </div>
