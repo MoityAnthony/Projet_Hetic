@@ -38,15 +38,6 @@ function App() {
       let dataset = datasets[0];
       let data = dataset.records[0];
         setTemperature(data.values._value);
-        if(temperature < 20){
-          setClim('hot');
-        }
-        else if(temperature > 20){
-          setClim('cool');
-        }
-        else if(temperature === 20){
-          setClim('');
-        }
       }
     )
     fetch('http://localhost:8010/proxy/humidity', { 
@@ -63,6 +54,21 @@ function App() {
       let dataset = datasets[0];
       let data = dataset.records[0];
         setHumidity(data.values._value);
+        if(temperature < 20 && (humidity < 50 || humidity > 50)){
+          setClim('hot');
+        }
+        else if(temperature > 20 && (humidity < 50 || humidity > 50)){
+          setClim('cool');
+        }
+        else if(temperature === 20 && (humidity < 50 || humidity > 50)){
+          setClim('normal');
+        }
+        else if(temperature < 20 && humidity < 50){
+          setClim('normal');
+        }
+        else if(temperature > 20 && humidity < 50){
+          setClim('normal');
+        }
         // else if(temperature === 20.81 ){
         //   setClim('cool');
         // }
@@ -93,7 +99,6 @@ function App() {
 
   return (
     <div className="App">
-      {clim}
       <Slider intensity={intensity} clim={clim}/>
       <div className="container_bg">
         <LightBlock />
